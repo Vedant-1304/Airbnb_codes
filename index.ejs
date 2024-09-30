@@ -1,0 +1,29 @@
+<% layout("./layouts/boilerplate") %>
+<body>
+    <h1>All LISTINGS</h1>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" >
+        <%for (listing of allListings){ %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+
+                <div class="card col" style="width: 20rem;">
+                    <img src="<%= listing.image %>" class="card-img-top" alt="#">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                      <p class="card-text"><b><%= listing.title %></b> <br>
+                        Price : &#x20B9;<%= listing.price.toLocaleString("en-IN") %> /night
+                        
+                    </p>
+                    </div>
+                  </div>
+            </a>
+           
+            <% } %>
+    </div>
+
+   
+    <!-- <a href="http://localhost:8080/add"><button>ADD YOUR PROPERTY</button></a> -->
+    
+</body>
+
+

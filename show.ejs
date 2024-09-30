@@ -1,0 +1,48 @@
+<% layout("./layouts/boilerplate") %>
+<body>
+    <h1>See deatils here</h1>
+    <div class="textlist">
+
+        Title : <%= seeListing.title %> <br>
+        Description : <%= seeListing.description %> <br>
+        <img src="<%= seeListing.image %>" alt="#" class="listimage"><br>
+        Price : &#x20B9;<%= seeListing.price.toLocaleString("en-IN") %> <br>
+        Location : <%= seeListing.location %> <br>
+        Country : <%= seeListing.country %>
+       <br><br>
+       <div class="row">
+        <a href="http://localhost:8080/edit/<%= seeListing._id %> " class="col-2"><button class="btn btn-dark">EDIT</button></a><br> <br>
+        <form action="http://localhost:8080/listings/<%= seeListing._id %>?_method=DELETE" method="post"  class="col-2"><button class="btn btn-dark">Delete</button></form><br>
+
+       </div>
+      
+       <br>
+       <div class="row">
+        <div class="col-8 ">
+            <hr>
+            <h4>Leave a review</h4>
+            <form action="http://localhost:8080/listings/<%= seeListing._id %>/reviews" novalidate class="needs-validation" method="post">
+                <div>
+                    <label for="rating" class="form-label">Rating</label>
+                    <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range" required>
+                </div>
+                <div>
+                    <label for="comment" class="form-label" >Comment</label>
+                    <textarea name="review[comment]" id="comment" cols="30" class="form-control" required></textarea>
+                    <div class="invalid-feedback">Please write review first</div>
+                </div>
+                <br>
+                <button class="btn btn-danger">Submit</button>
+                <br><br>
+            </form>
+           </div>
+
+           <hr>
+
+           <h4>All Reviews</h4>
+           <p> <%= seeListing.reviews %></p>
+
+       </div>
+      
+    </div>
+</body>

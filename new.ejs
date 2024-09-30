@@ -1,0 +1,61 @@
+<% layout("./layouts/boilerplate") %>
+<body>
+    <h3>ADD YOUR LISTING</h3>
+    <br>
+    <form action="http://localhost:8080/listings" method="post" novalidate class="needs-validation">
+
+        <div>
+            <label for="title" class="form-lable">Title</label>
+           
+            <input type="text" name="title" placeholder="enter title here" class="form-control" id="title" required>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        
+        </div>
+
+        
+        <br><br>
+        <div>
+            <label for="desc" class="form-label">Description</label>
+            <textarea name="description" placeholder="enter description here" class="form-control" id="desc" required></textarea>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+       
+        <br><br>
+
+        <div>
+            <label for="image" class="form-label">Image URL</label>
+            <textarea name="image" placeholder="enter url of image" id="image" class="form-control"></textarea>
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="price" class="form-label">Price</label>
+            <input  name="price" placeholder="enter price here" id="price" class="form-control" required>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+
+        <br><br>
+        <div>
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="location" placeholder="enter location here" id="location" class="form-control" required>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+        
+        <br><br>
+        <div>
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="country" placeholder="enter country here" id="country" class="form-control" required>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+        
+        <br>
+        <button class="btn btn-dark">ADD</button>
+        <br><br>
+    </form>
+</body>

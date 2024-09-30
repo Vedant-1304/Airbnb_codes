@@ -1,0 +1,54 @@
+<% layout("./layouts/boilerplate") %>
+<body>
+    <h1>EDIT THE LISTING</h1>
+    <form action="http://localhost:8080/listings/<%= seeListing._id %>?_method=PUT" method="post" novalidate class="needs-validation">
+       
+       <div>
+        <label for="title" class="form-label">Title</label>
+        <textarea name="title" id="title" class="form-control" required><%= seeListing.title %></textarea>
+        <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+       </div>
+       
+       <div>
+        <label for="desc" class="form-label">Description</label>
+        <textarea name="description" placeholder="enter description here" id="desc" class="form-control" required><%= seeListing.description %></textarea>
+        <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+       </div>
+        <br><br>
+
+        <div>
+            <label for="image"  class="form-label">Image URL</label>
+            <textarea name="image" placeholder="enter url of image" class="form-control" id="image"><%= seeListing.image %></textarea>
+        </div>
+        
+        <br><br>
+        <div>
+            <label for="price" class="form-label">Price</label>
+            <textarea name="price" id="price" class="form-control" required ><%=seeListing.price%></textarea>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+        
+        <br><br>
+        <div>
+            <label for="location" class="form-label">Location</label>
+            <textarea name="location"  id="location" class="form-control" required><%= seeListing.location %></textarea>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+
+        <br><br>
+        <div>
+            <label for="country" class="form-label">Country</label>
+            <textarea name="country" id="country" class="form-control" required><%= seeListing.country %></textarea>
+            <div class="valid-feedback">Looks good</div>
+            <div class="invalid-feedback">Please Provide correct info</div>
+        </div>
+        
+        <br><br>
+        <button class="btn btn-dark">EDIT</button>
+        <br><br>
+    </form>
+</body>
